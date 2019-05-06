@@ -1,14 +1,111 @@
-.grid * {
-    border: solid black 2px;
-    text-align: center;
+/* Prereqs */
+body, html {
+    margin:0;
+    padding: 0;
+    height: 100%;
+    font: bold 14px/1.5 'Courer New';
+    background-color: #fff9e7;
+    color: black;
 }
 .grid {
     display:grid;
-    grid-template-columns: 100px auto 100px;
-    grid-template-rows: repeat(3, 100px);
-    grid-gap: 1em;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "slide slide slide"
+    "news content content"
+    "news content content"
+    "footer footer footer";
+    text-align: center;
+}
+ header {
+     margin: 0;
+     padding: 0;
+     grid-area: header;
+ }
+ footer{
+     grid-area: footer;
+ }
+
+#main {
+    grid-area: content;
 }
 
-header, footer {
-    grid-column: 1 / 4;
+#news {
+    grid-area: news;
+}
+
+.slideShow {
+    grid-area: slide;
+}
+
+/* Nav Styling */
+#logo{
+    padding: 2.5vh 0;
+    height: 75%;
+    background-color: #fdd007;
+    color: black;
+}
+#logo h1{
+    margin: 0;
+    height: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+#nav-items {
+    background-color: black;
+    color: white;
+}
+.grid header {
+    width: 100%;
+    text-align: center;
+}
+.grid header ul {
+    position: relative;
+    display: inline-block;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+.grid header li {
+    float:left;
+    position: relative;
+}
+
+/* Hover Animation */
+
+.grid header li a {
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fdd007;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%; 
+    left: 0; 
+  }
+
+  /* SlideShow */
+  .slideShow{
+      background-color: black;
   }
