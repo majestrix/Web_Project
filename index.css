@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     height: 100%;
     font: bold 14px/1.5 'Courer New';
-    background-color: #fff9e7;
+    background:linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%); 
     color: black;
 }
 .grid {
@@ -43,18 +43,23 @@ body, html {
 #logo{
     padding: 2.5vh 0;
     height: 75%;
-    background-color: #fdd007;
+    background-color: white;
     color: black;
+    text-shadow: 2px 2px linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
 }
 #logo h1{
     margin: 0;
     height: 100%;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    font-size: 3rem;
+    background:  linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 #nav-items {
-    background-color: black;
-    color: white;
+    background-color: white;
+    border-bottom: solid 5px #3333;
 }
 .grid header {
     width: 100%;
@@ -78,7 +83,7 @@ body, html {
 
 .grid header li a {
     display: block;
-    color: white;
+    color: black;
     font-weight: bold;
     text-align: center;
     padding: 14px 16px;
@@ -96,7 +101,7 @@ a:after {
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #fdd007;
+    background: #4cf58a;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
@@ -107,5 +112,26 @@ a:after {
 
   /* SlideShow */
   .slideShow{
-      background-color: black;
+      background-color: rgba(256,256,256,0.7);
+      border-radius: 20px;
+      margin: 2.5vh 12.5vw;
+      height: 50vh;
+  }
+
+  /* Main Stuff */
+  #news,#main {
+      padding-top: 10%;
+      background-color: rgba(256,256,256,0.7);
+      border-radius: 15px;
+      margin: 10px;
+  }
+  #contact {
+      background-color: white;
+      height: 15vh;
+  }
+  #contact * {
+      text-transform: uppercase;
+      background: linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
   }
