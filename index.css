@@ -3,9 +3,12 @@ body, html {
     margin:0;
     padding: 0;
     height: 100%;
-    font: bold 14px/1.5 'Courer New';
-    background:linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%); 
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2;
     color: black;
+}
+h1,h2,h3,h4 {
+    font-family: 'Montserrat', sans-serif;
 }
 .grid {
     display:grid;
@@ -35,17 +38,55 @@ body, html {
     grid-area: news;
 }
 
-.slideShow {
+  /* SlideShow */
+  .slideShow {
+      background-color: black;
     grid-area: slide;
-}
-
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    }
+    .slide img{
+        filter: blur(4px);
+        max-width: 70vh;
+        min-width: 100%;
+        z-index: 1;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+    }
+    .text-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+      #searchText input {
+          padding: 12px 20px;
+          width: 20vw;
+          height: 100%;
+          float:left;
+          margin: 8px 0;
+          border: 1px solid yellowgreen;
+          border-radius: 4px;
+          transition: width 0.35s ease-in-out;
+      }
+      #searchText input:focus {
+          width: 35vw;
+      }
+      #searchText h2 {
+          color: white;
+          text-shadow: 2px 2px 3px black;
+      }
 /* Nav Styling */
 #logo{
-    padding: 2.5vh 0;
-    height: 75%;
+    padding: 1vh 0;
     background-color: white;
     color: black;
-    text-shadow: 2px 2px linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
+    border-bottom: solid yellowgreen 1px;
 }
 #logo h1{
     margin: 0;
@@ -53,13 +94,14 @@ body, html {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-size: 3rem;
-    background:  linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
-    -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    color: yellowgreen;
 }
 #nav-items {
+    position: sticky;
+    top: 0;
     background-color: white;
     border-bottom: solid 5px #3333;
+    z-index: 99;
 }
 .grid header {
     width: 100%;
@@ -101,21 +143,13 @@ a:after {
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #4cf58a;
+    background: yellowgreen;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
   a:hover:after {
     width: 100%; 
     left: 0; 
-  }
-
-  /* SlideShow */
-  .slideShow{
-      background-color: rgba(256,256,256,0.7);
-      border-radius: 20px;
-      margin: 2.5vh 12.5vw;
-      height: 50vh;
   }
 
   /* Main Stuff */
@@ -131,7 +165,9 @@ a:after {
   }
   #contact * {
       text-transform: uppercase;
-      background: linear-gradient(65deg, #4cf58a 0%, #8fd3f4 100%);
+      background: linear-gradient(to right, #dd3e54, #6be585);;
     -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
   }
+
+  /* Animation */
