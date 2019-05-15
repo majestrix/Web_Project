@@ -8,20 +8,26 @@
     </aside>
     
     <article id="main">
-        <div id="searchResult">
+        <?php
+        if(isset($_SESSION['search']))
+        print_r($_SESSION['search']);
+        echo <<<HTML
+            <div id="searchResult">
+            <h2>Picnic: {$_SESSION['search']['title']}</h2>
             <table>
-                <tr>
+            <tr>
                     <th>Destination</th>
                     <th>Place</th>
                     <th>Date</th>
                     <th>By</th>
                 </tr>
-                <div id="searchRows"></div>
             </table>
+HTML;
+        ?>
         </div>
     </article>
 
 <?php require_once('template/footer.php'); ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="js/car.js"></script>
 <script src="js/livesearch.js"></script>

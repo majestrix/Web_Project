@@ -14,7 +14,11 @@
     <header id="head">
         <div id="logo">
             <img src="images/logo.png" alt="">
-            <span>Keep calm something something...</span>
+            <span>
+            Picnic to the 
+            <br>    
+                <strong>max</strong>
+            </span>
         </div>
         <div id="nav-items">
             <ul>
@@ -24,7 +28,7 @@
                 <li><a href="#">About</a></li>
                 <?php
                 if(isset($_SESSION['user']))
-                    echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['user'].".</a></li>";
+                    echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['username'].".</a></li>";
                 else
                     echo "<li id='login-trigger'><a>Login ▼</a></li>";
                 ?>

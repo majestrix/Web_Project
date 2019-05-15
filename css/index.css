@@ -6,6 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     background: #f2f2f2;
     color: black;
+    scroll-behavior: smooth;
 }
 h1,h2,h3,h4 {
     font-family: 'Montserrat', sans-serif;
@@ -246,6 +247,7 @@ a:after {
 
   /* Main Stuff */
   #news,#main {
+      height: 100vh;
       background-color: rgba(256,256,256,0.7);
       border-radius: 15px;
       margin: 10px;
@@ -261,4 +263,7 @@ a:after {
 	-webkit-text-fill-color: transparent;
   }
 
+#searchResult {
+    display:none;
+}
   /* Animation */

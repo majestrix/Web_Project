@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-$db = new PDO("mysql:host=localhost;dbname=noodles",'root','');
+$db = new PDO("mysql:host=localhost;dbname=c59_Noodles",'root','');
 $user = $_POST['username'];
 $pass = md5($_POST['password']);
 $test = 'amjad';
-$res = $db->query("SELECT * FROM login WHERE user='$user'");
+$res = $db->query("SELECT * FROM customer WHERE username='$user'");
 if($res)
 {
     $res = $res->fetch();
