@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
-    <title>Index</title>
+    <title>Picnic R Us</title>
 </head>
 <body>
     <div class="grid">
     <header id="head">
         <div id="logo">
-            <h1>LOGO</h1>
+            <h1>Picnic R Us</h1>
             <small>Keep calm something something...</small>
         </div>
         <div id="nav-items">
@@ -51,9 +51,24 @@
     </article>
     
     <footer id="contact">
-        <h1>
-            Copyrights and stuff!
-        </h1>
+    	<div>
+    		<div>
+    			<strong>Address</strong>
+       			<address>
+       				<p>Picnic R Us</p>
+       				<p>Abu-Qash, Birzeit</p>
+       				<p>Palestine</p>
+       			</address>
+    		</div>
+    		<div>
+    			<strong>Contact Us</strong>
+
+    			<
+    		</div>
+    	</div>
+      
+       <br>
+
     </footer>
     </div>
     <script src="car.js"></script>
