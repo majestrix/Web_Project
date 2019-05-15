@@ -4,7 +4,11 @@
 </style>
 
 <article id="main">
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> search
 </article>
 <?php require_once('template/footer.php'); ?>
 

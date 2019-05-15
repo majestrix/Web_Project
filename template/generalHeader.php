@@ -13,8 +13,13 @@
     <div class="grid">
     <header id="head">
         <div id="logo">
+<<<<<<< HEAD
             <img src="images/logo.png" alt="">
             <span>Keep calm something something...</span>
+=======
+            <h1>LOGO</h1>
+            <small>Keep calm something something...</small>
+>>>>>>> search
         </div>
         <div id="nav-items">
             <ul>
