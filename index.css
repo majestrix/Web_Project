@@ -9,6 +9,10 @@ body, html {
 }
 h1,h2,h3,h4 {
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+fieldset{
+    border:0;
 }
 .grid {
     display:grid;
@@ -101,6 +105,7 @@ h1,h2,h3,h4 {
     top: 0;
     background-color: white;
     border-bottom: solid 5px #3333;
+    padding: 0 20vw;
     z-index: 99;
 }
 .grid header {
@@ -109,7 +114,6 @@ h1,h2,h3,h4 {
 }
 .grid header ul {
     position: relative;
-    display: inline-block;
     list-style-type:none;
     margin:0;
     padding:0;
@@ -121,8 +125,78 @@ h1,h2,h3,h4 {
     position: relative;
 }
 
-/* Hover Animation */
+/* Nav Login */
+li[id=login-trigger], #welUser{
+    float:right !important;
+}
+#login-wrapper {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: hidden;
+    animation: 0.5s loginpopup;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#login-content{
+    width: 50%;
+    margin: 15% auto;
+}
+#login-content [id*='login'] {
+    padding: 1em;
+}
+#login-header{
+    background-color: white;
+    border: 2px solid black;
+    border-bottom: 1px solid #888;    
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+#login-content input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#login-content input[type='submit']{
+    color: white;
+    background-color: yellowgreen;
+}
+#login-header h2{
+    display: inline;
+    color: yellowgreen;
+}
+#login-header span{
+    float:right;
+    margin-right: 1em;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+#login-body {
+    background-color: white;
+    border: 2px solid black;
+    border-top: none;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+#keepme {
+display: inline-block;
+width:100%;
+}
 
+@keyframes loginpopup {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+/* Hover Animation */
 .grid header li a {
     display: block;
     color: black;
