@@ -231,23 +231,9 @@ a:hover:after {
 /* Main Stuff */
 #news,
 #main {
-    height: 100vh;
     background-color: rgba(256, 256, 256, 0.7);
     border-radius: 15px;
     margin: 10px;
-}
-
-#contact {
-    background-color: white;
-    height: 15vh;
-}
-
-#contact * {
-    text-transform: uppercase;
-    background: linear-gradient(to right, #dd3e54, #6be585);
-    ;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 #searchResult {

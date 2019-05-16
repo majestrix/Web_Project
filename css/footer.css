@@ -32,6 +32,17 @@ footer {
     text-align: left;
 }
 
+/* footer > div[id] > div{
+    margin: 0;
+} */
+footer h3 {
+    display: inline-block;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #dd3e54, #6be585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 footer .cont {
     margin-left: -17%;
     display: inline-block;

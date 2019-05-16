@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
     <title>Index</title>
     <?php
+        session_name("result");
         session_start();
     ?>
 </head>
@@ -14,7 +15,11 @@
     <header id="head">
         <div id="logo">
             <img src="images/logo.png" alt="">
-            <span>Keep calm something something...</span>
+            <span>
+            Picnic to the 
+            <br>    
+                <strong>max</strong>
+            </span>
         </div>
         <div id="nav-items">
             <ul>

@@ -100,35 +100,35 @@ fieldset {
   border-radius: 15px;
   border: solid 1px;
   border-color: yellowgreen;
-  width: 500px;
-  margin: auto;
+  width: 90%;
   font-family: 'Agency FB', sans-serif;
   font-size: 1.3em;
 }
-
+#form1,
+#form2,
+#form3{
+  height: 100%;
+}
 .grid {
   display: grid;
-
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "header header header"
-    "content slide slide"
-    "footer footer footer";
+    "header header"
+    "content slide"
+    "footer  footer";
   text-align: center;
 }
 
 #main {
+  background-color: white;
   grid-area: content;
   text-align: left;
-  padding-left: 30px;
-  grid-area: content;
-  padding-top: 0.5%;
-  padding-bottom: 1.5%;
-  background-color: rgba(256, 256, 256, 0.7);
+  padding: 2rem;
   border-radius: 15px;
-  margin: 10px;
+  padding-bottom: 20px;
 }
 
-#slide {
+#fill {
   background-color: yellowgreen;
   grid-area: slide;
   padding-left: 30px;
@@ -138,6 +138,6 @@ fieldset {
   margin: 10px;
 }
 
-#slide img {
+#fill img {
   vertical-align: middle;
 }

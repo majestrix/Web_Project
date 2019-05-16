@@ -201,6 +201,7 @@ function validateForm(){
 	}
 	user = document.getElementById("userV").value;
 	var validU = validateUserV(user);
+	console.log(validU,x,isEmail);
 	if (!validU || x != 0 || !isEmail){
 		return false;
 	}

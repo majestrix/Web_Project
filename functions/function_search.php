@@ -1,4 +1,5 @@
 <?php
+session_name("result");
 session_start();
 
 $db = new PDO("mysql:host=localhost;dbname=c59_Noodles",'root','');
@@ -16,9 +17,9 @@ if(strlen($q) > 0)
                 $hint.="<a href='#main'><span>".$item['title']."</span></a>";
                 $hint.="</div>";
         }
+        $_SESSION['search'] = $res; 
     }
-    $found = $res->fetchAll();
-    $_SESSION['search'] = $found;
+    
 }
     echo $hint
 ?>

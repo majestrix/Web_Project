@@ -9,10 +9,10 @@ Yuh!
 ## To-Dizzle
 Task|Progress
 -|-
- HTML Structure | ❌
-Index Page | ❌
- CSS | ❌
-DB Functionality | ❌
+ HTML Structure | ✅
+ CSS | ✅
+Index Page/Main&News | ❌
+DB Functionality/Register | ❌
 
 
 ## HTML Structure

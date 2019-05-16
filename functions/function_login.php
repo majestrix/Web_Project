@@ -1,4 +1,5 @@
 <?php
+session_name("result");
 session_start();
 
 $db = new PDO("mysql:host=localhost;dbname=c59_Noodles",'root','');
