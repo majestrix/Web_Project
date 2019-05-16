@@ -13,13 +13,8 @@
     <div class="grid">
     <header id="head">
         <div id="logo">
-<<<<<<< HEAD
             <img src="images/logo.png" alt="">
             <span>Keep calm something something...</span>
-=======
-            <h1>LOGO</h1>
-            <small>Keep calm something something...</small>
->>>>>>> search
         </div>
         <div id="nav-items">
             <ul>
@@ -29,7 +24,7 @@
                 <li><a href="#">About</a></li>
                 <?php
                 if(isset($_SESSION['user']))
-                    echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['user'].".</a></li>";
+                    echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['username'].".</a></li>";
                 else
                     echo "<li id='login-trigger'><a>Login ▼</a></li>";
                 ?>
@@ -58,10 +53,10 @@
     </header>
     <?php
         function isLogged(){
-            return <<<ECHO
+            return <<<HTML
             <form action="functions/function_update.php">
                 <fieldset>
-                    <input type='text' name='username' id='username' placeholder={$_SESSION['user']['user']}>
+                    <input type='text' name='username' id='username' placeholder={$_SESSION['user']['username']}>
                     <input type='password' name='password' id='password' placeholder={$_SESSION['user']['pass']}>
                     <input type='password' name='confirmPassword' id='confirmPassword' placeholder='Confirm password!'>
                 </fieldset>
@@ -74,11 +69,11 @@
                     <input type='submit' id='logout' value="Logout">
                 </fieldset>
             </form>
-ECHO;
+HTML;
             }
             
         function notLogged(){
-            return <<<ECHO
+            return <<<HTML
                 <form action="functions/function_login.php" method="POST">
                 <fieldset>
                     <input type="text" name="username" id="username" placeholder="Enter username!">
@@ -93,6 +88,6 @@ ECHO;
                 </fieldset>
                 <a href="signup.php">Not signed in? Sign up now!</a>
             </form>
-ECHO;
+HTML;
         }
     ?>

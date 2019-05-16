@@ -1,6 +1,8 @@
 <?php require_once('template/header.php'); ?>
 <style>
+    <?php require_once('css/header.css'); ?>
     <?php require_once('css/index.css'); ?>
+    <?php require_once('css/footer.css'); ?>
 </style>
 
     <aside id="news">
