@@ -10,22 +10,19 @@
     </aside>
     
     <article id="main">
-        <?php
-        if(isset($_SESSION['search']))
-        print_r($_SESSION['search']);
-        echo <<<HTML
-            <div id="searchResult">
-            <h2>Picnic: {$_SESSION['search']['title']}</h2>
-            <table>
-            <tr>
-                    <th>Destination</th>
-                    <th>Place</th>
-                    <th>Date</th>
-                    <th>By</th>
-                </tr>
+        <div id="searchResult">
+            <h2 id="pic-title">Available picnics</h2>
+            <table id="pic-table">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Place</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
             </table>
-HTML;
-        ?>
         </div>
     </article>
 

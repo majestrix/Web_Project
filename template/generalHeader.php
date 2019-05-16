@@ -23,7 +23,7 @@
         </div>
         <div id="nav-items">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#aleft">News</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">About</a></li>

@@ -23,7 +23,7 @@
         </div>
         <div id="nav-items">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#aleft">News</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">About</a></li>
@@ -59,7 +59,7 @@
             <div class="text-center">
                 <div id="searchText">
                     <h2>Suit yourself with a picnic!</h2>
-                    <input type="text" placeholder="Search here" onkeyup="showResult(this.value)">
+                    <input type="text" placeholder="Search here" onclick="showResult(&quot;none&quot;)" onkeyup="showResult(this.value)">
                     <div id="livesearch"></div>
                 </div>
             </div>

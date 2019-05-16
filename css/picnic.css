@@ -1,0 +1,36 @@
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "header header"
+      "content content"
+      "footer  footer";
+    text-align: center;
+  }
+
+  #main {
+      display: grid;
+      grid-template-columns: auto auto;
+      margin: 0 10%;
+      padding: 10px;
+  }
+  #right {
+      border: solid yellowgreen 1px;
+      border-radius: 5px;   
+      padding: 1em;
+  }
+  button {
+    background-color: yellowgreen;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  

@@ -60,7 +60,112 @@
       border-radius: 15px;
       margin: 10px;
   }
-#searchResult {
+  /* Table CSS */
+  #searchResult{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
     display:none;
 }
-  
+
+#pic-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+#pic-table td, #pic-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+#pic-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+#pic-table thead th {
+    color: #ffffff;
+    background: yellowgreen;
+}
+
+
+#pic-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+#pic-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    #pic-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    #pic-table thead, #pic-table tbody, #pic-table thead th {
+        display: block;
+    }
+    #pic-table thead th:last-child{
+        border-bottom: none;
+    }
+    #pic-table thead {
+        float: left;
+    }
+    #pic-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    #pic-table td, #pic-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    #pic-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    #pic-table tbody tr {
+        display: table-cell;
+    }
+    #pic-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    #pic-table tr:nth-child(even) {
+        background: transparent;
+    }
+    #pic-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    #pic-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    #pic-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
