@@ -1,0 +1,175 @@
+body, html {
+    margin:0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2;
+    color: black;
+}
+h1,h2,h3,h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+p {
+	font-style: italic;
+	font-family: sans-serif;
+}
+hr {
+	color: 1px solid greenyellow;
+}
+.color {
+	color: greenyellow;
+	font-weight: bold;
+	font-style: italic;
+}
+.grid {
+    display:grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "photo content content"
+    "footer footer footer";
+    text-align: center;
+}
+ header {
+     margin: 0;
+     padding: 0;
+     grid-area: header;
+ }
+ #photo {
+ 	border-radius: 15px;
+ 	margin: 15px;
+    padding: 0px;
+ 	grid-area: photo;
+ }
+ #content {
+ 	border-radius: 15px;
+ 	background-color: #FCFCFC;
+ 	text-align: left;
+ 	margin: 15px;
+    padding-left: 10px;
+    padding-top: 20%;
+ 	grid-area: content;
+ }
+ footer{
+ 	border-radius: 15px;
+    margin: 10px;
+ 	background-color: #BFB7B7;
+    grid-area: footer;
+    display:grid;
+    grid-template-areas:
+    "address contact company"
+    "copy copy copy";
+ }
+ #address {
+ 	grid-area: address;
+ }
+ #contact {
+ 	grid-area: contact;
+ }
+ #company{
+ 	grid-area: company;
+ }
+ #copy {
+ 	font-family: 'Bahnschrift', sans-serif;
+ 	font-style: italic;
+ 	opacity: 0.7;
+ 	padding: 5px;
+ 	line-height: 0.4rem;
+ 	grid-area: copy;
+ 	text-align: left;
+ }
+ footer .cont{
+  margin-left: -17%;
+  display:inline-block;
+  text-align:left;
+  }
+
+ footer .val{
+  width: 0.1px;
+  text-align:right;
+  display:inline-block;
+  }
+ footer a:link {
+ text-decoration: none;
+  color: black;
+}
+ footer a:hover {
+ text-decoration: underline;
+  color: green;
+}
+ footer a:active {
+ 	text-decoration: underline;
+  color: red;
+}
+ footer a:visited {
+ text-decoration: none;
+}
+ #logo{
+    padding: 1vh 0;
+    background-color: white;
+    color: black;
+    border-bottom: solid yellowgreen 1px;
+}
+#logo h1{
+    margin: 0;
+    height: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: yellowgreen;
+}
+#nav-items {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: solid 5px #3333;
+    z-index: 99;
+}
+.grid header {
+    width: 100%;
+    text-align: center;
+}
+.grid header ul {
+    position: relative;
+    display: inline-block;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+.grid header li {
+    float:left;
+    position: relative;
+}
+
+/* Hover Animation */
+
+.grid header li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: yellowgreen;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%; 
+    left: 0; 
+  }

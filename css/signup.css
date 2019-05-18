@@ -1,0 +1,143 @@
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=e-mail],
+textarea {
+  width: 60%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=date]:focus,
+input[type=e-mail]:focus,
+textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  border-radius: 50px;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: yellowgreen;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 90%;
+}
+
+
+h2 {
+  color: yellowgreen;
+}
+
+fieldset {
+  border-radius: 15px;
+  border: solid 1px;
+  border-color: yellowgreen;
+  width: 90%;
+  font-family: 'Agency FB', sans-serif;
+  font-size: 1.3em;
+}
+#form1,
+#form2,
+#form3{
+  height: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "content slide"
+    "footer  footer";
+  text-align: center;
+}
+
+#main {
+  background-color: white;
+  grid-area: content;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 15px;
+  padding-bottom: 20px;
+}
+
+#fill {
+  background-color: yellowgreen;
+  grid-area: slide;
+  padding-left: 30px;
+  padding-top: 0.5%;
+  padding-bottom: 1.5%;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+#fill img {
+  vertical-align: middle;
+}
