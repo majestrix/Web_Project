@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.4.15.10
+-- https://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 16, 2019 at 08:42 PM
--- Server version: 10.1.39-MariaDB
--- PHP Version: 7.3.5
+-- Host: localhost
+-- Generation Time: May 18, 2019 at 08:05 AM
+-- Server version: 5.5.60-MariaDB
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `c59_noodles`
+-- Database: `c59_Noodles`
 --
 
 -- --------------------------------------------------------
@@ -28,10 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `activities`
 --
 
-CREATE TABLE `activities` (
+CREATE TABLE IF NOT EXISTS `activities` (
   `activity id` int(11) NOT NULL,
   `activity` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `activities`
@@ -51,7 +49,7 @@ INSERT INTO `activities` (`activity id`, `activity`) VALUES
 -- Table structure for table `book`
 --
 
-CREATE TABLE `book` (
+CREATE TABLE IF NOT EXISTS `book` (
   `ref num` int(11) NOT NULL,
   `customer id` int(11) NOT NULL,
   `payment` int(11) NOT NULL,
@@ -77,7 +75,7 @@ INSERT INTO `book` (`ref num`, `customer id`, `payment`, `special`) VALUES
 -- Table structure for table `condition`
 --
 
-CREATE TABLE `condition` (
+CREATE TABLE IF NOT EXISTS `condition` (
   `ref num` int(11) NOT NULL,
   `capacity` int(11) NOT NULL,
   `children` enum('0','1') NOT NULL DEFAULT '1',
@@ -103,7 +101,7 @@ INSERT INTO `condition` (`ref num`, `capacity`, `children`, `disability`, `baby`
 -- Table structure for table `customer`
 --
 
-CREATE TABLE `customer` (
+CREATE TABLE IF NOT EXISTS `customer` (
   `customer id` int(11) NOT NULL,
   `name` varchar(112) NOT NULL,
   `username` varchar(13) NOT NULL,
@@ -113,7 +111,7 @@ CREATE TABLE `customer` (
   `address` varchar(112) NOT NULL,
   `phone` varchar(50) NOT NULL,
   `active` enum('0','1') NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1000000007 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
@@ -134,10 +132,10 @@ INSERT INTO `customer` (`customer id`, `name`, `username`, `pass`, `email`, `bir
 -- Table structure for table `food`
 --
 
-CREATE TABLE `food` (
+CREATE TABLE IF NOT EXISTS `food` (
   `food id` int(11) NOT NULL,
   `food` varchar(112) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food`
@@ -171,7 +169,7 @@ INSERT INTO `food` (`food id`, `food`) VALUES
 -- Table structure for table `got`
 --
 
-CREATE TABLE `got` (
+CREATE TABLE IF NOT EXISTS `got` (
   `rev id` int(11) NOT NULL,
   `pic id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -203,7 +201,7 @@ INSERT INTO `got` (`rev id`, `pic id`) VALUES
 -- Table structure for table `has`
 --
 
-CREATE TABLE `has` (
+CREATE TABLE IF NOT EXISTS `has` (
   `pic id` int(11) NOT NULL,
   `act id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -213,6 +211,7 @@ CREATE TABLE `has` (
 --
 
 INSERT INTO `has` (`pic id`, `act id`) VALUES
+(1000000000, 2),
 (1000000000, 5),
 (1000000001, 6),
 (1000000002, 1),
@@ -228,7 +227,7 @@ INSERT INTO `has` (`pic id`, `act id`) VALUES
 -- Table structure for table `payment`
 --
 
-CREATE TABLE `payment` (
+CREATE TABLE IF NOT EXISTS `payment` (
   `payment id` int(20) NOT NULL,
   `customer id` int(11) NOT NULL,
   `number` varchar(20) NOT NULL,
@@ -236,7 +235,7 @@ CREATE TABLE `payment` (
   `credit` varchar(112) NOT NULL,
   `expire` date NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `payment`
@@ -257,31 +256,32 @@ INSERT INTO `payment` (`payment id`, `customer id`, `number`, `name`, `credit`, 
 -- Table structure for table `picnic`
 --
 
-CREATE TABLE `picnic` (
+CREATE TABLE IF NOT EXISTS `picnic` (
   `ref` int(10) NOT NULL,
   `title` varchar(50) NOT NULL,
   `place` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `price` double NOT NULL,
   `departure` time NOT NULL,
+  `meet` varchar(112) NOT NULL,
   `arrival` time NOT NULL,
   `back` time NOT NULL,
   `transportation` varchar(50) NOT NULL DEFAULT 'No Transportation Available',
   `description` varchar(256) CHARACTER SET utf8 DEFAULT 'Description Here',
   `src` varchar(56) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1000000006 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `picnic`
 --
 
-INSERT INTO `picnic` (`ref`, `title`, `place`, `date`, `price`, `departure`, `arrival`, `back`, `transportation`, `description`, `src`) VALUES
-(1000000000, 'Central Park', 'New York, USA', '2019-05-09', 50, '14:00:00', '15:00:00', '20:00:00', 'No Transportation Available', 'Desc here', 'images/picnics/central.jpg'),
-(1000000001, 'Villa Borghese Gardens', 'Roma, Italy', '2019-07-03', 40, '08:30:00', '10:00:00', '16:00:00', 'Bus', 'Desc here', 'images/picnics/villa.jpg'),
-(1000000002, 'Le Saut De Loup', 'Paris, France', '2019-08-08', 40, '10:00:00', '10:30:00', '15:00:00', 'Mini Van', 'Desc here', 'images/picnics/saut.jpg'),
-(1000000003, 'Arderne Gardens', 'Claremont, South Africa', '2019-05-09', 70, '05:00:00', '06:30:00', '13:00:00', 'No Transportation Available', 'Desc here', 'images/picnics/ard.jpg'),
-(1000000004, 'Marwick Head', 'Orkney, UK', '2019-06-13', 35, '17:00:00', '17:45:00', '22:00:00', 'Bus', 'Desc here', 'images/picnics/head.jpg'),
-(1000000005, 'Isla de Guilligan', 'Guánica, Puerto Rico', '2019-10-02', 45, '09:00:00', '09:50:00', '17:00:00', 'Limo', 'Desc here', 'images/picnics/isle.jpg');
+INSERT INTO `picnic` (`ref`, `title`, `place`, `date`, `price`, `departure`, `meet`, `arrival`, `back`, `transportation`, `description`, `src`) VALUES
+(1000000000, 'Central Park', 'New York, USA', '2019-05-09', 50, '14:00:00', 'none', '15:00:00', '20:00:00', 'No Transportation Available', 'Desc here', 'images/picnics/central.jpg'),
+(1000000001, 'Villa Borghese Gardens', 'Roma, Italy', '2019-07-03', 40, '08:30:00', 'none', '10:00:00', '16:00:00', 'Bus', 'Desc here', 'images/picnics/villa.jpg'),
+(1000000002, 'Le Saut De Loup', 'Paris, France', '2019-08-08', 40, '10:00:00', 'none', '10:30:00', '15:00:00', 'Mini Van', 'Desc here', 'images/picnics/saut.jpg'),
+(1000000003, 'Arderne Gardens', 'Claremont, South Africa', '2019-05-09', 70, '05:00:00', 'none', '06:30:00', '13:00:00', 'No Transportation Available', 'Desc here', 'images/picnics/ard.jpg'),
+(1000000004, 'Marwick Head', 'Orkney, UK', '2019-06-13', 35, '17:00:00', 'none', '17:45:00', '22:00:00', 'Bus', 'Desc here', 'images/picnics/head.jpg'),
+(1000000005, 'Isla de Guilligan', 'Guánica, Puerto Rico', '2019-10-02', 45, '09:00:00', 'none', '09:50:00', '17:00:00', 'Limo', 'Desc here', 'images/picnics/isle.jpg');
 
 -- --------------------------------------------------------
 
@@ -289,10 +289,10 @@ INSERT INTO `picnic` (`ref`, `title`, `place`, `date`, `price`, `departure`, `ar
 -- Table structure for table `review`
 --
 
-CREATE TABLE `review` (
+CREATE TABLE IF NOT EXISTS `review` (
   `revew id` int(11) NOT NULL,
   `review` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `review`
@@ -306,7 +306,7 @@ INSERT INTO `review` (`revew id`, `review`) VALUES
 (6, 'Are you going to make this picnic again sometime guys?'),
 (7, 'Thank you, it was wholesome'),
 (8, 'Great :P'),
-(9, 'Too Bad don\'t recommend'),
+(9, 'Too Bad don''t recommend'),
 (10, 'Wish i could bring my children'),
 (11, 'Not bad '),
 (12, 'Great Job guys'),
@@ -320,7 +320,7 @@ INSERT INTO `review` (`revew id`, `review`) VALUES
 -- Table structure for table `serve`
 --
 
-CREATE TABLE `serve` (
+CREATE TABLE IF NOT EXISTS `serve` (
   `pic id` int(11) NOT NULL,
   `food id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -423,38 +423,32 @@ ALTER TABLE `serve`
 -- AUTO_INCREMENT for table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activity id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `activity id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000007;
-
+  MODIFY `customer id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1000000007;
 --
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-  MODIFY `food id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
+  MODIFY `food id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `payment id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `picnic`
 --
 ALTER TABLE `picnic`
-  MODIFY `ref` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000006;
-
+  MODIFY `ref` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1000000006;
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `revew id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `revew id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- Constraints for dumped tables
 --
@@ -493,7 +487,6 @@ ALTER TABLE `has`
 ALTER TABLE `serve`
   ADD CONSTRAINT `food` FOREIGN KEY (`food id`) REFERENCES `food` (`food id`),
   ADD CONSTRAINT `picnic ref` FOREIGN KEY (`pic id`) REFERENCES `picnic` (`ref`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
