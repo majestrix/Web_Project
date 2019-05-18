@@ -1,9 +1,9 @@
 <?php
     session_start();
-    $host = "localhost";
-    $dbname = "c59_Noodles";
-    $dbuser = "root";
-    $dbpass = "";
+    $dbhost="localhost";
+    $dbname="c59_Noodles";
+    $dbuser="c59_Noodles";
+    $dbpass="comp334!";
     try{
 
         $db = new PDO("mysql:host=$host;dbname=$dbname;",$dbuser,$dbpass);

@@ -1,87 +1,55 @@
- /* SlideShow */
- .slideShow {
-    background-color: black;
-<<<<<<< HEAD
-    grid-area: slide;
-    position: relative;
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
     width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
   }
-  .slide{
-      position: absolute;
-      display: none;
-      top:0;
-      width:100%;
-  }
-  .slide:first-of-type{
-      display: block;
-=======
-  grid-area: slide;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
->>>>>>> final
-  }
-  .slide img{
-      filter: blur(4px);
-      max-width: 70vh;
-      min-width: 100%;
-      z-index: 1;
-      -webkit-transition: opacity 1s ease-in-out;
-      -moz-transition: opacity 1s ease-in-out;
-      -o-transition: opacity 1s ease-in-out;
-      transition: opacity 1s ease-in-out;
-  }
-  .text-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-    }
-    #searchText input {
-        display:block;
-        padding: 12px 20px;
-        width: 20vw;
-        height: 100%;
-        margin-top: 0.75em;
-        border: 1px solid yellowgreen;
-        outline:none;
-        border-radius: 4px;
-        transition: width 0.35s ease-in-out;
-    }
-    #searchText input:focus {
-        width: 35vw;
-        border: 1px solid yellowgreen;
-    }
-    #searchText h2 {
-        color: white;
-        text-shadow: 2px 2px 3px black;
-    }
-    #livesearch{
-        display:block;
-        border-top: 0;
-        background-color: white;
-        border-bottom-left-radius: 5px; 
-        border-bottom-right-radius: 5px;
-    }
-    #livesearch div{
-        border-top: 1px solid yellowgreen;
-    }
-  /* Main Stuff */
-  #news,#main {
-      height: 100vh;
-      background-color: rgba(256,256,256,0.7);
-      border-radius: 15px;
-      margin: 10px;
-  }
-  /* Table CSS */
-  #searchResult{
-    margin: 10px 70px 70px;
-    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
-    display:none;
+}
+
+h2,h4 {
+	color: greenyellow;
+}
+
+label {
+	font-family: 'Verdana', 'Helvetica', sans-serif;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "content content"
+    "footer footer";
+  text-align: center;
+}
+#main {
+  background-color: white;
+  grid-area: content;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  line-height: 1.5em;
+}
+
+#main img {
+	height: 20px;
+	width: 20px;
 }
 
 #pic-table {
@@ -185,4 +153,52 @@
         display: block;
         text-align: center;
     }
+}
+
+input[type=number] {
+  width: 60%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  border-radius: 50px;
+}
+button {
+  background-color: yellowgreen;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 300px) {
+
+  button {
+    width: 20%;
+  }
 }

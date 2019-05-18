@@ -8,11 +8,11 @@
     <aside id="news">
         <h4><b>Latest picnic:</b></h4>
     <?php
-        $host = "localhost";
-        $dbname = "c59_Noodles";
-        $dbuser = "root";
-        $dbpass = "";
-        $db = new PDO("mysql:host=$host;dbname=$dbname;",$dbuser,$dbpass);
+        $dbhost="localhost";
+        $dbname="c59_Noodles";
+        $dbuser="c59_Noodles";
+        $dbpass="comp334!";
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
         $res = $db->query("SELECT * FROM picnic");
         $res = $res->fetchAll();
         $res = end($res);
@@ -47,5 +47,8 @@
 <?php require_once('template/footer.php'); ?>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="js/car.js"></script>
+<<<<<<< HEAD
 <script src="js/header.js"></script>
+=======
+>>>>>>> final
 <script src="js/livesearch.js"></script>

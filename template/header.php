@@ -6,7 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
     <title>Index</title>
     <?php
+<<<<<<< HEAD
         session_name();
+=======
+        session_name("result");
+>>>>>>> final
         session_start();
     ?>
 </head>
@@ -24,7 +28,11 @@
         <div id="nav-items">
             <ul>
                 <li><a href="index.php">Home</a></li>
+<<<<<<< HEAD
                 <li><a href="index.php#news">News</a></li>
+=======
+                <li><a href="#aleft">News</a></li>
+>>>>>>> final
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="about.php">About</a></li>
                 <?php
@@ -32,8 +40,11 @@
                     echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['username'].".</a></li>";
                 else
                     echo "<li id='login-trigger'><a>Login ▼</a></li>";
+<<<<<<< HEAD
                 if(isset($_SESSION['manager']) && $_SESSION['manager'] == 1)
                     echo "<li><a href='manager.php'>Manager</a></li>";
+=======
+>>>>>>> final
                 ?>
             </ul>
         </div>
@@ -44,7 +55,20 @@
                     <span onclick="closeLogin()">&times</span>
                 </div>
                 <div id="login-body">
+<<<<<<< HEAD
                     <?php require_once("login.php"); ?>
+=======
+                    <?php
+                    if(!isset($_SESSION['user']))
+                    {
+                        echo notLogged();
+                    }
+                    else
+                    {
+                        echo isLogged();
+                    }
+                    ?>
+>>>>>>> final
                 </div>
             </div>
         </div>
@@ -67,4 +91,47 @@
             ?>
         </div>
     </header>
+<<<<<<< HEAD
 
+=======
+    <?php
+        function isLogged(){
+            return <<<ECHO
+            <form action="functions/function_update.php">
+                <fieldset>
+                    <input type='text' name='username' id='username' placeholder={$_SESSION['user']['user']}>
+                    <input type='password' name='password' id='password' placeholder={$_SESSION['user']['pass']}>
+                    <input type='password' name='confirmPassword' id='confirmPassword' placeholder='Confirm password!'>
+                </fieldset>
+                <fieldset>
+                    <input type='submit' id='submit'>
+                </fieldset>
+            </form>
+            <form action='functions/function_logout.php' method='GET'>    
+                <fieldset>
+                    <input type='submit' id='logout' value="Logout">
+                </fieldset>
+            </form>
+ECHO;
+            }
+            
+        function notLogged(){
+            return <<<ECHO
+                <form action="functions/function_login.php" method="POST">
+                <fieldset>
+                    <input type="text" name="username" id="username" placeholder="Enter username!">
+                    <input type="password" name="password" id="password" placeholder="Enter Password!">
+                </fieldset>
+                <fieldset>
+                    <input type="submit" id="submit">
+                    <div id="keepme">
+                        <input type="checkbox" name="keep">
+                        <span>Keep me signed in</span>
+                    </div>
+                </fieldset>
+                <a href="signup.php">Not signed in? Sign up now!</a>
+            </form>
+ECHO;
+        }
+    ?>
+>>>>>>> final

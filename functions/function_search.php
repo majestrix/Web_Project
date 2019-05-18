@@ -3,7 +3,11 @@ session_name();
 session_start();
 
 $_SESSION['result'] = false;
-$db = new PDO("mysql:host=localhost;dbname=c59_Noodles",'root','');
+$dbhost="localhost";
+$dbname="c59_Noodles";
+$dbuser="c59_Noodles";
+$dbpass="comp334!";
+$db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
 $q = $_GET['q'];
 if($q !== "none")
     $sql = "SELECT * FROM picnic WHERE title LIKE '%".$q."%'";

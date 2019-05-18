@@ -4,9 +4,9 @@
     session_start();
     $dbhost="localhost";
     $dbname="c59_Noodles";
-    $dbuser="root";
-    $dbpass="";
-    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+    $dbuser="c59_Noodles";
+    $dbpass="comp334!";
+    $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
     if(!$pdo ) {
         die("Could not connect to database");
     }
