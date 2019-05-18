@@ -21,18 +21,7 @@
                         <button>Book now!</button>
                 </div>
         </div>
-        <!-- <article>
-                <h3>Location:</h3>
-                <p>
-                <?php
-                        echo $res['place'];
-                        echo $res['date'];
-                        echo $res['price'];
-                        echo $res['departure'];
-                        echo $res['transportation'];
-                        echo $res['description'];
-                ?>
-        </p> -->
 </article>
 <?php require_once('template/footer.php'); ?>
+<script src="js/header.js"></script>
 

@@ -1,5 +1,5 @@
 <?php
-session_name("result");
+session_name();
 session_start();
 
 $_SESSION['result'] = false;

@@ -11,20 +11,15 @@
         $setString = "";
         print_r($_POST);
         forEach($_POST as $key => $value){
-            if($key == "confirmPassword")
-                break;
             if($value)
             {
                 $setString .= "$key=?,";
-                if($key != "password")
-                    array_push($values,$value);
-                else
-                    array_push($values,md5($value));
+                array_push($values,$value);
             }
         }
         $setString = rtrim($setString,',');
-        $user = $_SESSION['user']['username'];
-        $sql = "UPDATE customer SET $setString WHERE username='$user'";
+        $title = $_POST['title'];
+        $sql = "UPDATE picnic SET $setString WHERE title='$title'";
         $stmt = $db->prepare($sql);
         print_r($stmt);
         $res = $stmt->execute($values);
@@ -32,11 +27,6 @@
         if($res)
         {
             echo "Inserted";
-            $user = $_POST['username'];
-            $sql = "SELECT * FROM customer WHERE username='$user'";
-            $res = $db->query($sql);
-            $res = $res->fetch();
-            $_SESSION['user'] = $res;
         }
         else
             echo "Error:(";
@@ -44,5 +34,5 @@
     catch(Exception $e){
         var_dump($e->getMessage());
     }
-    header("Location: ../index.php");
+    header("Location: ../manager.php");
 ?>

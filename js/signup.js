@@ -4,8 +4,24 @@ var f3 = document.getElementById("form3");
 var b1 = document.getElementById("firtNext");
 var b2 = document.getElementById("secondNext");
 var b3 = document.getElementById("confirm");
+var r1 = document.getElementById("firstClear");
 f2.style.display ="none";
 f3.style.display = "none";
+/*function firstReset(){
+	document.getElementById("name").style.border ="none";
+	document.getElementById("name").value ="";
+	document.getElementById("address").style.border ="none";
+	document.getElementById("address").value ="";
+	document.getElementById("dob").style.border ="none";
+	document.getElementById("dob").value ="";
+	document.getElementById("id").style.border ="none";
+	document.getElementById("id").value ="";
+	document.getElementById("email").style.border ="none";
+	document.getElementById("email").value ="";
+	document.getElementById("phone").style.border ="none";
+	document.getElementById("phone").value ="";
+	document.getElementById("emailErr").innerHTML ="";
+}*/
 function nextStep(){
 	var x=0;
 	if (document.getElementById("name").value == ""){
@@ -35,13 +51,6 @@ function nextStep(){
 	}
 	else {
 		document.getElementById("email").style.border = "none";
-	}
-	if (document.getElementById("id").value == ""){
-		document.getElementById("id").style.border = "2px solid red";
-		x=1;
-	}
-	else {
-		document.getElementById("id").style.border = "none";
 	}
 	if (document.getElementById("phone").value == ""){
 		document.getElementById("phone").style.border = "2px solid red";
@@ -76,6 +85,24 @@ function nextStep(){
   		}
 		});
 }
+/*function cancel(){
+	document.getElementById("nameV").style.border ="none";
+	document.getElementById("nameV").value ="";
+	document.getElementById("userErrV").innerHTML ="";
+	document.getElementById("addressV").style.border ="none";
+	document.getElementById("addressV").value ="";
+	document.getElementById("dobV").style.border ="none";
+	document.getElementById("dobV").value ="";
+	document.getElementById("idV").style.border ="none";
+	document.getElementById("idV").value ="";
+	document.getElementById("userV").style.border ="none";
+	document.getElementById("userV").value ="";
+	document.getElementById("emailV").style.border ="none";
+	document.getElementById("emailV").value ="";
+	document.getElementById("emailErrV").innerHTML ="";
+	document.getElementById("phoneV").style.border ="none";
+	document.getElementById("phoneV").value ="";
+}*/
 function backStep(){
 	f2.style.display = "none";
 	f3.style.display = "none";
@@ -88,7 +115,6 @@ function laterStep(){
 	var name =document.getElementById("name").value;
 	var address =document.getElementById("address").value;
 	var dob =document.getElementById("dob").value;
-	var id =document.getElementById("id").value;
 	var email =document.getElementById("email").value;
 	var phone =document.getElementById("phone").value;
 	var user =document.getElementById("user").value;
@@ -116,7 +142,6 @@ function laterStep(){
 			document.getElementById("userV").value = user;
 			document.getElementById("addressV").value= address;
 			document.getElementById("dobV").value = dob;
-			document.getElementById("idV").value = id;
 			document.getElementById("emailV").value = email;
 			document.getElementById("phoneV").value = phone;
 			f1.style.display ="none";
@@ -167,13 +192,6 @@ function validateForm(){
 	else {
 		document.getElementById("emailV").style.border = "none";
 	}
-	if (document.getElementById("idV").value == ""){
-		document.getElementById("idV").style.border = "2px solid red";
-		x=1;
-	}
-	else {
-		document.getElementById("idV").style.border = "none";
-	}
 	if (document.getElementById("phoneV").value == ""){
 		document.getElementById("phoneV").style.border = "2px solid red";
 		x=1;
@@ -201,7 +219,6 @@ function validateForm(){
 	}
 	user = document.getElementById("userV").value;
 	var validU = validateUserV(user);
-	console.log(validU,x,isEmail);
 	if (!validU || x != 0 || !isEmail){
 		return false;
 	}
@@ -213,9 +230,8 @@ function validateData(){
 var name =document.getElementById("name").value;
 var address =document.getElementById("address").value;
 var dob =document.getElementById("dob").value;
-var id =document.getElementById("id").value;
 var phone =document.getElementById("phone").value;
-	if (name == "" || address == "" || dob == "" || id == "" || email == "" || phone == "")
+	if (name == "" || address == "" || dob == "" || email == "" || phone == "")
 		return false;
 return true;
 }
@@ -238,7 +254,7 @@ function validateUser(user){
 		return true;
 	} else {
 		document.getElementById("user").style.border = "2px solid red";
-		document.getElementById("userErr").innerHTML = "*Username is invalid";
+		document.getElementById("userErr").innerHTML = "*Username is invalid (5-14 characters)";
 		return false;
 	}
 }
@@ -277,4 +293,3 @@ function validatePsw(psw){
 		return false;
 	}
 }
-

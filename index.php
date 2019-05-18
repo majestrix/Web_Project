@@ -6,10 +6,28 @@
 </style>
 
     <aside id="news">
-    Left Aside
+        <h4><b>Latest picnic:</b></h4>
+    <?php
+        $host = "localhost";
+        $dbname = "c59_Noodles";
+        $dbuser = "root";
+        $dbpass = "";
+        $db = new PDO("mysql:host=$host;dbname=$dbname;",$dbuser,$dbpass);
+        $res = $db->query("SELECT * FROM picnic");
+        $res = $res->fetchAll();
+        $res = end($res);
+        $title = $res['title'];
+        $ref = $res['ref'];
+        $src = $res['src'];
+        echo "<figure>";
+        echo "<a href='picnic.php?ref=$ref'><img src=$src></a>";
+        echo "<figcaption>$title</figcaption>";
+        echo "</figure>";
+    ?>
     </aside>
     
     <article id="main">
+        <h1>Welcome to our page!</h1>
         <div id="searchResult">
             <h2 id="pic-title">Available picnics</h2>
             <table id="pic-table">
@@ -29,4 +47,5 @@
 <?php require_once('template/footer.php'); ?>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="js/car.js"></script>
+<script src="js/header.js"></script>
 <script src="js/livesearch.js"></script>

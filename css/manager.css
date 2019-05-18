@@ -1,0 +1,189 @@
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    background: #324960;
+    color: black;
+    scroll-behavior: smooth;
+    margin:0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+.grid{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: 
+    "side content"
+    "side content"
+    "side content"
+    "side content";
+    text-align: center;
+}
+/* Content */
+.content {
+    grid-area: content;
+    display: grid;
+    border-radius: 10px;
+}
+/* Sidebar */
+.side {
+    grid-area: side;
+    /* margin: 0;
+    padding: 0; */
+    background-color: yellowgreen;
+    box-shadow: 2px 0 4px rgba(0,0,0,0.5);
+}
+
+.side h2 {
+    padding: 12px;
+    color: white;
+    text-shadow: 2px 2px 2px .324960
+}
+
+.side a {
+    display: block;
+    color: black;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.side .active {
+    background-color: #324960d0;
+    color: white;
+}
+
+.side a:hover:not(.active) {
+    background-color: #324960;
+    color: white;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .side {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .side a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .side a {
+        text-align: center;
+        float: none;
+    }
+}
+
+.wrapper {
+    position: absolute;
+    margin: 5em;
+    padding: 2em;
+    background-color: #ccc;
+    box-shadow: 4px 4px 2px rgba(0,0,0,0.5);
+}
+
+form label {
+    display: block;
+}
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.form-group{
+    display: inline-block;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=e-mail],
+input[type=time],
+textarea {
+  display: inline-block;
+  border: none;
+  background: white;
+  border-radius: 1px;
+}
+
+input[type="submit"],
+input[type="reset"]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #aaa;
+    background-color: yellowgreen;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+td {
+    margin: 0 10px;
+}
+
+.fadeOut {
+    z-index: 0;
+    opacity: 0;
+    transition: 1s opacity;
+    overflow: hidden;
+}
+.fadeIn {
+    z-index: 2;
+    opacity: 1;
+    transition: 1s opacity;
+    overflow: hidden;
+}
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select {
+    padding: 0.5rem;
+    margin: 5px;
+}
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
