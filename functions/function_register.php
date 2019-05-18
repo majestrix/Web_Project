@@ -4,15 +4,15 @@
     session_start();
     $dbhost="localhost";
     $dbname="c59_Noodles";
-    $dbuser="c59_Noodles";
-    $dbpass="comp334!";
+    $dbuser="root";
+    $dbpass="";
     $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
-    if(!$pdo ) {
+    if(!$db ) {
         die("Could not connect to database");
     }
     $pass = md5($_POST["password"]);
     $sqlStatement = "INSERT INTO customer (name, username, pass,email,birth,address,phone) VALUES (?,?,?,?,?,?,?)";
-	$stmt = $pdo->prepare($sqlStatement);
+	$stmt = $db->prepare($sqlStatement);
 	$status = $stmt->execute([trim($_POST['nameV']), trim($_POST['userV']), $pass, trim($_POST['emailV']), $_POST['dobV'], $_POST['addressV'], $_POST["phoneV"]]);
 	if(!$status ) {
 		echo $stmt->error;
@@ -21,7 +21,7 @@
 	{
 		$name = $_POST['nameV'];
 		$sql = "SELECT * FROM customer WHERE name='$name'";
-		$res = $pdo->query($sql);
+		$res = $db->query($sql);
 		$res = $res->fetch();
 		$_SESSION["user"] = $res;
 		header("Location: ../index.php");

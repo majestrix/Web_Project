@@ -15,15 +15,15 @@
         <?php
         $dbhost="localhost";
         $dbname="c59_Noodles";
-        $dbuser="c59_Noodles";
-        $dbpass="comp334!";
-        $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
-        if(!$pdo ) {
+        $dbuser="root";
+        $dbpass="";
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+        if(!$db ) {
             die("Could not connect to database");
         }
         $ref = 1000000003;
         $str = "SELECT `price` FROM `picnic` WHERE `ref` = '$ref'";
-        $result = $pdo->query($str);
+        $result = $db->query($str);
         $price = 0;
         while ($row = $result->fetch()){
             $price = $row['price'];

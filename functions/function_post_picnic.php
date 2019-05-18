@@ -11,8 +11,8 @@
         $values = "";
         $dbhost="localhost";
         $dbname="c59_Noodles";
-        $dbuser="c59_Noodles";
-        $dbpass="comp334!";
+        $dbuser="root";
+        $dbpass="";
         try{
             
             $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
@@ -41,6 +41,7 @@
         catch(Exception $e){
             var_dump($e->getMessage());
         }
+        header("Location: ../manager.php");
             ?>
 </body>
 </html>

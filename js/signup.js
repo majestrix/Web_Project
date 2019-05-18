@@ -254,11 +254,7 @@ function validateUser(user){
 		return true;
 	} else {
 		document.getElementById("user").style.border = "2px solid red";
-<<<<<<< HEAD
 		document.getElementById("userErr").innerHTML = "*Username is invalid (5-14 characters)";
-=======
-		document.getElementById("userErr").innerHTML = "*Username is invalid";
->>>>>>> final
 		return false;
 	}
 }
@@ -296,9 +292,4 @@ function validatePsw(psw){
 		document.getElementById("passwordC").style.border = "2px solid red";
 		return false;
 	}
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> final

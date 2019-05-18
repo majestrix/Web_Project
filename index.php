@@ -10,8 +10,8 @@
     <?php
         $dbhost="localhost";
         $dbname="c59_Noodles";
-        $dbuser="c59_Noodles";
-        $dbpass="comp334!";
+        $dbuser="root";
+        $dbpass="";
         $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
         $res = $db->query("SELECT * FROM picnic");
         $res = $res->fetchAll();
@@ -47,8 +47,5 @@
 <?php require_once('template/footer.php'); ?>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="js/car.js"></script>
-<<<<<<< HEAD
 <script src="js/header.js"></script>
-=======
->>>>>>> final
 <script src="js/livesearch.js"></script>

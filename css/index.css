@@ -1,7 +1,6 @@
  /* SlideShow */
  .slideShow {
     background-color: black;
-<<<<<<< HEAD
     grid-area: slide;
     position: relative;
     width: 100%;
@@ -16,13 +15,6 @@
   }
   .slide:first-of-type{
       display: block;
-=======
-  grid-area: slide;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
->>>>>>> final
   }
   .slide img{
       filter: blur(4px);

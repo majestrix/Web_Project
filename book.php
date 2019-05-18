@@ -27,15 +27,15 @@
     	}
     	$dbhost="localhost";
 		$dbname="c59_Noodles";
-		$dbuser="c59_Noodles";
-		$dbpass="comp334!";
-		$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
-		if(!$pdo ) {
+		$dbuser="root";
+		$dbpass="";
+		$db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+		if(!$db ) {
 			die("Could not connect to database");
 		}
 		$ref = $_COOKIE['page'];
 		$str = "SELECT `price` FROM `picnic` WHERE `ref` = '$ref'";
-		$result = $pdo->query($str);
+		$result = $db->query($str);
 		$price = 0;
 		while ($row = $result->fetch()){
 			$price = $row['price'];
@@ -77,14 +77,14 @@
             	<?php
             		$dbhost="localhost";
 				    $dbname="c59_Noodles";
-				    $dbuser="c59_Noodles";
-				    $dbpass="comp334!";
-				    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
-				    if(!$pdo ) {
+				    $dbuser="root";
+				    $dbpass="";
+				    $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+				    if(!$db ) {
 				        die("Could not connect to database");
 				    }
 					$str = "SELECT * FROM picnic WHERE ref = '$ref'";
-			        $result = $pdo->query($str);
+			        $result = $db->query($str);
 			        $price = 0;
 			        while ($row = $result->fetch()){
 			        	$price = $row['price'];
@@ -101,7 +101,7 @@
 			            echo "</tr>";
 			        }
 			        $str1 = "SELECT * FROM `condition` WHERE `ref num` = '$ref'";
-				    $result1 = $pdo->query($str1);
+				    $result1 = $db->query($str1);
 				    while ($row = $result1->fetch()){
 				      $capacity = $row['capacity'];
 				      $child = $row['children'];
@@ -110,13 +110,13 @@
 				    }
 
 			         $str2 = "SELECT `act id` as `id` FROM has WHERE `pic id` = '$ref'";
-                     $result2 = $pdo->query($str2);
+                     $result2 = $db->query($str2);
                      $act= array();
                      while ($row = $result2->fetch()){
                         array_push($act,$row['id']);
                      } 
                       $str3 = "SELECT `food id` as `id` FROM serve WHERE `pic id` = '$ref'";
-                     $result3 = $pdo->query($str3);
+                     $result3 = $db->query($str3);
                      $food= array();
                      while ($row = $result3->fetch()){
                         array_push($food,$row['id']);
@@ -159,7 +159,7 @@
             		<?php 
             		foreach ($act as $value) {
                             $str = "SELECT `activity` FROM `activities` WHERE `activity id` = '$value'";
-                            $result = $pdo->query($str);
+                            $result = $db->query($str);
                             while ($row = $result->fetch()){
                                 echo "<label>- ".$row['activity']."</label><br>";
                             }
@@ -171,7 +171,7 @@
             		<?php 
             		foreach ($food as $value) {
                             $str = "SELECT `food` FROM `food` WHERE `food id` = '$value'";
-                            $result = $pdo->query($str);
+                            $result = $db->query($str);
                             while ($row = $result->fetch()){
                                 echo "<label>- ".$row['food']."</label><br>";
                             }

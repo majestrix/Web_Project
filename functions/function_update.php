@@ -2,8 +2,8 @@
     session_start();
     $dbhost="localhost";
     $dbname="c59_Noodles";
-    $dbuser="c59_Noodles";
-    $dbpass="comp334!";
+    $dbuser="root";
+    $dbpass="";
     try{
         $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
         $values = array();
@@ -31,11 +31,15 @@
         if($res)
         {
             echo "Inserted";
-            $user = $_POST['username'];
+            if($_POST['username'])
+                $user = $_POST['username'];
+            else
+                $user = $_SESSION['user']['username'];
             $sql = "SELECT * FROM customer WHERE username='$user'";
             $res = $db->query($sql);
             $res = $res->fetch();
             $_SESSION['user'] = $res;
+            print_r($_SESSION);
         }
         else
             echo "Error:(";

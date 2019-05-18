@@ -20,6 +20,7 @@ if($_SESSION['manager'] != 1)
             <a id="homeAnchor" onclick="viewMain();">Home</a>
             <a id="postAnchor" onclick="viewPost();">Post a Picnic</a>
             <a id="editAnchor" onclick="viewEdit();">Edit a Picnic</a>
+            <a href="index.php" >Back</a>
         </aside>
         <section class="content">
             <div id="post" class="wrapper">

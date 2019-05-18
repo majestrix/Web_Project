@@ -2,11 +2,11 @@
     session_start();
     $dbhost="localhost";
     $dbname="c59_Noodles";
-    $dbuser="c59_Noodles";
-    $dbpass="comp334!";
+    $dbuser="root";
+    $dbpass="";
     try{
 
-        $db = new PDO("mysql:host=$host;dbname=$dbname;",$dbuser,$dbpass);
+        $db = new PDO("mysql:host=$dbhost;dbname=$dbname;",$dbuser,$dbpass);
         $values = array();
         $setString = "";
         print_r($_POST);

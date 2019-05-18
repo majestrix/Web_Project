@@ -4,9 +4,9 @@ session_start();
 
 $_SESSION['result'] = false;
 $dbhost="localhost";
-$dbname="c59_Noodles";
-$dbuser="c59_Noodles";
-$dbpass="comp334!";
+$dbname="c59_noodles";
+$dbuser="root";
+$dbpass="";
 $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
 $q = $_GET['q'];
 if($q !== "none")

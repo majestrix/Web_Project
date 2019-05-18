@@ -1,58 +1,12 @@
-<<<<<<< HEAD
 <?php require_once("template/generalHeader.php"); ?>
-=======
-
-    <?php require_once("template/generalHeader.php"); ?>
->>>>>>> final
     <style type="text/css">
           <?php require_once("css/header.css"); ?>
           <?php require_once("css/signup.css"); ?>
           <?php require_once("css/footer.css"); ?>
     </style>
     
-<<<<<<< HEAD
     <div id="main">
     	<form name="myForm" action="functions/function_register.php" method="POST" onsubmit="return validateForm()">
-=======
-    <?php
-    if($_SERVER['REQUEST_METHOD'] === 'POST' ) {
-    session_name("session_name");
-    session_start();
-    $_SESSION["user"] = $_POST['userV'];
-    $dbhost="localhost";
-    $dbname="c59_Noodles";
-    $dbuser="c59_Noodles";
-    $dbpass="noodles4life";
-    $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
-    if(!$pdo ) {
-        die("Could not connect to database");
-    }
-    $pass = md5($_POST["password"]);
-    $sqlStatement = "INSERT INTO customer (name, username, pass,email,birth,address,phone) VALUES (?,?,?,?,?,?,?)";
-            $stmt = $pdo->prepare($sqlStatement);
-            $status = $stmt->execute([trim($_POST['nameV']), trim($_POST['userV']), $pass, trim($_POST['emailV']), $_POST['dobV'], $_POST['addressV'], $_POST["phoneV"]]);
-             if(!$status ) {
-                echo $stmt->error;
-            }
-        $str = "SELECT max(`customer id`) as id FROM customer";
-        $result = $pdo->query($str);
-        $max = 0;
-        while ($row = $result->fetch()){
-            $max = ($row['id']);
-        }
-        $u = "Username: ".$_POST['userV'];
-        $v = "Customer ID: $max";
-        echo "<script type='text/javascript'>
-        alert('$u\\n$v'); 
-        window.location.replace(\"http:index.php\");
-        </script>";
-
-    }
-    ?>
-
-    <div id="main">
-    	<form name="myForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" onsubmit="return validateForm()">
->>>>>>> final
     		<div id="form1">
 		    	<h2>1st Step: Create an Account</h2>
 				<fieldset><br>
@@ -103,13 +57,8 @@
 				<span><img src="icons/info.png" alt="password should be 8-13 characters, start with an upper case alphabet and ends with a digit" title="password should be 8-13 characters, start with an upper case alphabet and ends with a digit" width="21px" height="21px"></span>
 				<span id="pswErr" class="error"></span>
 				<br><br>
-<<<<<<< HEAD
 				<LABEL>Confirm Password pls:<label class="error">*</label></LABEL> <br>
 				<input type="password" id="passwordC" name="passwordC" placeholder="Enter password">
-=======
-				<LABEL>Confirm Password:<label class="error">*</label></LABEL> <br>
-				<input type="password" id="passwordC" name="password" placeholder="Enter password">
->>>>>>> final
 				<br>
 				<span id="pswCon" class="error"></span>
 				<br><br>
@@ -172,10 +121,5 @@
     <img src="images/maxv.png">
 </div>
 <?php require_once("template/footer.php"); ?>
-<<<<<<< HEAD
 <script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript" src="js/signup.js"></script>
-=======
-<script type="text/javascript" src="js/signup.js"></script>
-<script type="text/javascript" src="js/car.js"></script>
->>>>>>> final

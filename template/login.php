@@ -44,8 +44,8 @@ HTML;
         
                 <form action="functions/function_login.php" method="POST">
                 <fieldset>
-                    <input type="text" name="headerUsername" id="headerUsername" placeholder="Enter username!">
-                    <input type="password" name="headerPassword" id="headerPassword" placeholder="Enter Password!">
+                    <input type="text" name="username" id="headerUsername" placeholder="Enter username!">
+                    <input type="password" name="password" id="headerPassword" placeholder="Enter Password!">
                 </fieldset>
                 <fieldset>
                     <input type="submit" id="submit">

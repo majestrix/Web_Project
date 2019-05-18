@@ -1,5 +1,6 @@
+<?php require_once("template/generalHeader.php"); ?>
 <?php
-if ($_SESSION['user']['total'] != ""){
+if ($_SESSION['user']['total'] == ""){
   header("Location: index.php");
 }
 ?>
@@ -25,7 +26,6 @@ if ($_SESSION['user']['total'] != ""){
             
             </script>
 
-<?php require_once("template/generalHeader.php"); ?>
     <style type="text/css">
           <?php require_once("css/header.css"); ?>
           <?php require_once("css/pay.css"); ?>
@@ -39,11 +39,17 @@ if ($_SESSION['user']['total'] != ""){
     ?>
     <?php 
     if($_SERVER['REQUEST_METHOD'] === 'POST' ) {
+      $db = 
       echo "<script type='text/javascript'>
         alert('Thank you for joining in the picnic');
           window.location.replace(\"http:index.php\");
           </script>";
-
+          // $dbhost="localhost";
+          // $dbname="c59_Noodles";
+          // $dbuser="root";
+          // $dbpass="";
+          // $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+          // $res = $db->query("INSERT INTO ")
     }
 
     ?>
@@ -71,7 +77,7 @@ if ($_SESSION['user']['total'] != ""){
         Expiry date<br>
         <input type="text" name="date" id="date" placeholder="MM/YY">
          </div>
-        <button type="submit"= id="go" name="go">Pay <?php echo "($total";?>$)</button>
+        <button type="submit" id="go" name="go">Pay <?php echo "($total";?>$)</button>
       </form>
     </div>
 

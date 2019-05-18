@@ -2,9 +2,9 @@
     session_start();
     $q = $_GET['q'];
     $dbhost="localhost";
-    $dbname="c59_Noodles";
-    $dbuser="c59_Noodles";
-    $dbpass="comp334!";
+    $dbname="c59_noodles";
+    $dbuser="root";
+    $dbpass="";
     $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
     $res = $db->query("SELECT * FROM picnic WHERE ref='$q'");
     $res = $res->fetch(PDO::FETCH_ASSOC);

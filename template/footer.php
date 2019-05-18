@@ -44,19 +44,11 @@
 		<br>
 		<h3>COMPANY</h3> <br>
 		<span>
-<<<<<<< HEAD
 			<a href="about.html"> About Us </a>
 		</span>
 		<br>
 		<span>
 			<a href="news.php"> News </a>
-=======
-			<small><a href="about.html"> About Us </a> </small>
-		</span>
-		<br>
-		<span>
-			<small><a href="news.php"> News </a></small>
->>>>>>> final
 		</span>
 
 	</div>
