@@ -26,10 +26,10 @@
         	</script>";
     	}
     	$dbhost="localhost";
-		$dbname="c59_Noodles";
-		$dbuser="root";
-		$dbpass="";
-		$db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
+		$dbname="c65_Noodles";
+		$dbuser="c65_Noodles";
+		$dbpass="comp334!";
+		$db = new PDO("mysql:host=$dbhost;dbname=$dbname;",$dbuser, $dbpass);
 		if(!$db ) {
 			die("Could not connect to database");
 		}
@@ -76,9 +76,9 @@
             <tbody>
             	<?php
             		$dbhost="localhost";
-				    $dbname="c59_Noodles";
-				    $dbuser="root";
-				    $dbpass="";
+				    $dbname="c65_Noodles";
+				    $dbuser="c65_Noodles";
+				    $dbpass="comp334!";
 				    $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
 				    if(!$db ) {
 				        die("Could not connect to database");

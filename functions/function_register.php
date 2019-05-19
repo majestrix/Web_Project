@@ -1,11 +1,11 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST' ) {
-    session_name();
+    session_name("result");
     session_start();
     $dbhost="localhost";
-    $dbname="c59_Noodles";
-    $dbuser="root";
-    $dbpass="";
+    $dbname="c65_Noodles";
+    $dbuser="c65_Noodles";
+    $dbpass="comp334!";
     $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
     if(!$db ) {
         die("Could not connect to database");

@@ -1,33 +1,35 @@
 <?php
-session_name();
+session_name("result");
 session_start();
 
 $dbhost="localhost";
-$dbname="c59_noodles";
-$dbuser="root";
-$dbpass="";
+$dbname="c65_Noodles";
+$dbuser="c65_Noodles";
+$dbpass="comp334!";
 $db = new PDO("mysql:host=$dbhost;dbname=$dbname;",$dbuser, $dbpass);
 
-print_r($_POST);
-$user = $_POST['username'];
-$pass = md5($_POST['password']);
-$test = "laith";
-
-$res = $db->query("SELECT * FROM customer WHERE username='$user'");
-if($res)
+if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    $res = $res->fetch();
-    if($res['pass'] == $pass)
+    $user = $_POST['username'];
+    $pass = md5($_POST['password']);
+    $res = $db->query("SELECT * FROM customer WHERE username='$user'");
+    if($res)
     {
-        $_SESSION['user'] = $res;
-        if($res['username'] == "comp334")
-            $_SESSION['manager'] = 1;
+        $res = $res->fetch();
+        if($res['pass'] == $pass)
+        {
+            $_SESSION['user'] = $res;
+            if($res['username'] == "comp334")
+                $_SESSION['manager'] = 1;
+        }
+        else
+        $_SESSION['err'] = "Invalid username/password";
     }
+    else
+    {
+        $_SESSION['err'] = "Invalid username/password";
+    }
+
+    header("Location: ../index.php");
 }
-else
-{
-    $_SESSION['err'] = "Invalid username/password";
-}
-print_r($_SESSION);
-header("Location: ../index.php");
 ?>

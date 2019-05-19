@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
     <title>Index</title>
     <?php
-        session_name();
+        session_name("result");
         session_start();
     ?>
 </head>
@@ -28,6 +28,8 @@
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="about.php">About</a></li>
                 <?php
+                print_r($_SESSION);
+                echo $_SESSION['err'];
                 if(isset($_SESSION['user']))
                     echo "<li id='login-trigger'><a href='#'>Welcome ".$_SESSION['user']['username'].".</a></li>";
                 else

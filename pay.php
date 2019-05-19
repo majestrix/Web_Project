@@ -45,9 +45,9 @@ if ($_SESSION['user']['total'] == ""){
           window.location.replace(\"http:index.php\");
           </script>";
           // $dbhost="localhost";
-          // $dbname="c59_Noodles";
-          // $dbuser="root";
-          // $dbpass="";
+          // $dbname="c65_Noodles";
+          // $dbuser="c65_Noodles";
+          // $dbpass="comp334!";
           // $db = new PDO("mysql:host=$dbhost;dbname=$dbname",$dbuser, $dbpass);
           // $res = $db->query("INSERT INTO ")
     }

@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
     <title>Index</title>
     <?php
-        session_name();
+        session_name("result");
         session_start();
     ?>
 </head>
